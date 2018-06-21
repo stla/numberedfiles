@@ -1,0 +1,35 @@
+name:                numberedfiles
+version:             0.1.0.0
+-- synopsis:
+-- description:
+homepage:            https://github.com/stla/numberedfiles#readme
+license:             GPL-3
+author:              Stéphane Laurent
+maintainer:          laurent_step@yahoo.fr
+copyright:           2018 Stéphane Laurent
+category:            Utilities
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+library
+  hs-source-dirs:      src
+  exposed-modules:     Lib
+  build-depends:       base >= 4.7 && < 5
+                     , directory
+  default-language:    Haskell2010
+
+executable numberfiles
+  hs-source-dirs:      src
+  main-is:             Main.hs
+  other-modules:       Lib
+  ghc-options:         -O2 -threaded -with-rtsopts=-N
+  build-depends:       base >= 4.7 && < 5
+                     , numberedfiles
+                     , optparse-applicative
+                     , directory
+  default-language:    Haskell2010
+
+source-repository head
+  type:     git
+  location: https://github.com/stla/numberedfiles
